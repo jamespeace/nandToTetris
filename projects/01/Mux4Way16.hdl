@@ -20,7 +20,7 @@ CHIP Mux4Way16 {
     Not(in=sel[0], out=ns0);
     Not(in=sel[1], out=ns1);
 
-    Mux16(a=a[0..15], b=[0..15], sel=sel[0], out=aOrb[0..15]);
-    Mux16(a=c[0..15], b=[0..15], sel=sel[0], out=cOrd[0..15]);
-    Mux16(a=aOrb[0..15], b=cOrd[0..15], sel=sel[1], out=out[0..15]);
+    Mux16(a=a, b=b, sel=sel[0], out=aOrb);
+    Mux16(a=c, b=d, sel=sel[0], out=cOrd);
+    Mux16(a=aOrb, b=cOrd, sel=sel[1], out=out);
 }
